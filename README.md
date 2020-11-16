@@ -6,7 +6,7 @@ Imagine these scenarios:
 - You have ripped your cherished red and blue Beatles best-of CDs, released in 1993. To your frustration, these songs keep appearing in your "90s Rock" playlists.
 - You have a big folder of loose tracks you downloaded on Napster back in the 1990s because you loved the videos on MTV! But they have no genre or year tags. So none of these songs ever get included in your Genre or Decade playlists, and this makes you sad.
 
-Clearly, these songs need to be tagged with their *original* release year. But looking up every single song, checking its original release year, and writing that in the tags is tedious manual work. MusicBrainz Picard is pretty awesome, but will still tag compilation album tracks with the release date of the album, not the years when the original singles were released. This is where these scripts come in.
+Clearly, these songs need to be tagged with their *original* release year. But looking up every single song, checking its original release year, and writing that in the tags is tedious manual work. MusicBrainz Picard is pretty awesome, but will still tag compilation album tracks with the release date of the album, not the years when the original singles were released. This is where this script comes in: it will try to find the original single on Discogs, and tag the song with that year.
 
 # How to install:
 1. Create new script in macOS Script Editor
@@ -18,7 +18,6 @@ Clearly, these songs need to be tagged with their *original* release year. But l
 6. When you open Music, there's a scripts dropdown menu in the top menu bar between "Window" and "Help"
 
 # Script 1: DiscogsYearGenres
-
 1. You select one or more tracks, you run the script "Discogs Year and Genres"
 2. Choose to write Year, Genre(s) or both
 3. One genre: the script will the prompt you *for each track* which genre to write to the Genre field
