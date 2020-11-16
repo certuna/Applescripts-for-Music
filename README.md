@@ -12,7 +12,7 @@ Clearly, these songs need to be tagged with their *original* release year, and p
 
 # How to install:
 1. Create new script in macOS Script Editor
-2. Copy/paste the code in the file [DiscogsYearGenres.txt](https://github.com/certuna/Applescripts-for-Music/raw/main/DiscogsYearGenres.txt) in this repository 
+2. Copy/paste the code from this file [DiscogsYearGenres.txt](https://github.com/certuna/Applescripts-for-Music/raw/main/DiscogsYearGenres.txt) to the new Applescript 
 3. Replace the text `please_insert_your_own_API_key_here` in the `QueryDiscogs` function with your own [Discogs API key](https://www.discogs.com/settings/developers) (you need to set up a Discogs account if you haven't got one)
 4. If you are on macOS Mojave or older, you still have iTunes. Replace the `tell application "Music"` line with `tell application "iTunes"`
 4. Save the script as `Discogs Year and Genres.scpt`
