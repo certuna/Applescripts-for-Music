@@ -95,10 +95,17 @@ tell application "Music"
 					set SongString to first item of my theSplit(SongString, " (")
 				end try
 				set ArtistSong to ArtistString & " " & SongString
+				
 				set QueryAnswer to my QueryDiscogs(ArtistSong, 1)
 				set ReleaseYear to second item of QueryAnswer
-				set ReleaseGenresStyles to third item of QueryAnswer & ", " & fourth item of QueryAnswer
+				set ReleaseGenres to third item of QueryAnswer
+				set ReleaseStyles to fourth item of QueryAnswer
+				set ReleaseGenresStyles to ReleaseGenres
+				if ReleaseStyles is not "" then
+					set ReleaseGenresStyles to ReleaseGenresStyles & ", " & ReleaseStyles
+				end if
 				set ReleaseGenresStyles to my replaceText(", ", ";", ReleaseGenresStyles)
+				
 				if WriteMultipleGenres is false then
 					set DialogText to "Choose genre for " & (get artist of thetrack) & " - " & (get name of thetrack)
 					set GenreArray to my theSplit(ReleaseGenresStyles, ";")
