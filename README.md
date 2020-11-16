@@ -21,7 +21,7 @@ Clearly, these songs need to be tagged with their *original* release year, and p
 
 # What it does:
 1. You select one or more songs in Music, you run the script `Discogs Year and Genres`
-2. You choose to write Year, Genre(s) or both
+2. You choose to write Year, Genre or both
 3. **One genre**: the script will the prompt you *for each track* which genre to write to the Genre field. **Multiple**: the script will write all genres and styles in the Genre field, separated by semicolons
 4. Optionally writes the `"Artist - Release"` of the Discogs item to the Comments field, so you can check afterwards which master release this year came from.
 5. The script performs a Discogs search for `Artist SongTitle` for the 'master release' of the single, gets back the Year, Genres and Styles.
