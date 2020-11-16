@@ -5,7 +5,7 @@ Scenarios:
 - You have ripped your cherished red and blue Beatles best-of CDs, released in 1993. To your frustration, these songs keep appearing in your "90s Rock" playlists.
 - You have a big folder of loose tracks you downloaded on Napster back in the 1990s, but they have no genre or year tags.
 
-Clearly, these songs need to be tagged with their *original* release year. But looking up every single song, checking its original release year, and writing that in the tags is tedious manual work. This is where these scripts come in.
+Clearly, these songs need to be tagged with their *original* release year. But looking up every single song, checking its original release year, and writing that in the tags is tedious manual work. MusicBrainz Picard is pretty awesome, but will tag compilation albums with the release date of the album, not years of the original tracks. This is where these scripts come in.
 
 How to install:
 1. Create new script in macOS Script Editor
