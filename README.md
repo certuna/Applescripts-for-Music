@@ -7,7 +7,7 @@ Imagine these scenarios:
 
 Clearly, these songs need to be tagged with their *original* release year. But looking up every single song, checking its original release year, and writing that in the tags is tedious manual work. MusicBrainz Picard is pretty awesome, but will still tag compilation album tracks with the release date of the album, not the years when the original singles were released. This is where these scripts come in.
 
-How to install:
+# How to install:
 1. Create new script in macOS Script Editor
 2. Copy/paste the code from this repository
 3. Replace the text "please_insert_your_own_API_key_here" in the QueryDiscogs function with your own Discogs API key, see https://www.discogs.com/developers/
