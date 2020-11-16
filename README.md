@@ -1,7 +1,7 @@
 # Applescripts for Music: Year and/or Genre from Discogs
 
 Scenarios:
-- You have a disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern disco songs by Kylie Minogue and Dua Lipa.
+- You have a disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern disco songs by Jessie Ware and Dua Lipa.
 - You have ripped your cherished red and blue Beatles best-of CDs, released in 1993. To your frustration, these songs keep appearing in your "90s Rock" playlists.
 - You have a big folder of loose tracks you downloaded on Napster back in the 1990s, but they have no genre or year tags.
 
