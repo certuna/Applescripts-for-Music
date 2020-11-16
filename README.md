@@ -3,7 +3,7 @@
 How to install:
 1. Create new script in macOS Script Editor
 2. Copy/paste the code from this repository
-3. Replace the text "please_insert_your_own_API_key_here" with your own Discogs API key, see https://www.discogs.com/developers/
+3. Replace the text "please_insert_your_own_API_key_here" in the QueryDiscogs function with your own Discogs API key, see https://www.discogs.com/developers/
 4. Save script as .scpt
 5. Put script in /Library/Music/Scripts (all users) or /User/johndoe/Library/Music/Scripts (one user)
 
