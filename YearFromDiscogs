@@ -42,51 +42,89 @@ to QueryDiscogs(ArtistSong, nthItem)
 	set return to my replaceText("\"", "", return)
 	set Title to my ExtractString(return, "title: ", ", ", nthItem)
 	set ReleaseYear to my ExtractString(return, "year: ", ", ", nthItem)
+	set Genres to my ExtractString(return, "genre: [", "],", nthItem)
+	set Styles to my ExtractString(return, "style: [", "],", nthItem)
 	
-	return {Title, ReleaseYear}
+	return {Title, ReleaseYear, Genres, Styles}
 	
 end QueryDiscogs
 
-set Question to display dialog "write the Discogs Artist - Title to the Comments field?" buttons {yes, no} default button 2
-set WriteToComments to button returned of Question
-
-if Token is "please_insert_your_own_API_key_here" then
-	display dialog "you need to edit this script first in macOS Script Editor and insert your own Discogs API key"
-	return
+set Question to display dialog "Do you want to update Year, Genre or both" buttons {"Year", "Genre(s)", "Both"}
+if button returned of Question is "Year" or button returned of Question is "Both" then
+	set WriteYear to true
+end if
+if button returned of Question is "Genre(s)" or button returned of Question is "Both" then
+	set WriteGenres to true
 end if
 
-tell application "Music"
+set Question to display dialog "One Genre or multiple?" buttons {"One", "Multiple"}
+if button returned of Question is "One" then
+	set WriteMultipleGenres to false
+else
+	set WriteMultipleGenres to true
+end if
+
+set Question to display dialog "write the Discogs Artist - Title to the Comments field?" buttons {"yes", "no"} default button 2
+if button returned of Question is "yes" then
+	set WriteToComments to true
+else
+	set WriteToComments to false
+end if
+
+tell application "Music" --change this to "iTunes" if you're on Mojave or earlier
 	if selection is not {} then
-		set sel to selection
+		set theselectedtracks to selection
 		set FilesCounter to 0
 		set TagsWrittenCounter to 0
-		repeat with t in sel
+		repeat with thetrack in theselectedtracks
 			set FilesCounter to FilesCounter + 1
 			try
 				set fixed indexing to true
-				set ArtistString to my replaceText("& ", "", (get artist of t))
+				set ArtistString to my replaceText("& ", "", (get artist of thetrack))
 				try
 					set ArtistString to first item of my theSplit(ArtistString, " ft ")
 				end try
-				set SongString to (get name of t)
+				set SongString to (get name of thetrack)
 				try
 					set SongString to first item of my theSplit(SongString, " (")
 				end try
 				set ArtistSong to ArtistString & " " & SongString
 				set QueryAnswer to my QueryDiscogs(ArtistSong, 1)
 				set ReleaseYear to second item of QueryAnswer
+				set ReleaseGenresStyles to third item of QueryAnswer & ", " & fourth item of QueryAnswer
+				set ReleaseGenresStyles to my replaceText(", ", ";", ReleaseGenresStyles)
+				if WriteMultipleGenres is false then
+					set DialogText to "Choose genre for " & (get artist of thetrack) & " - " & (get name of thetrack)
+					set GenreArray to my theSplit(ReleaseGenresStyles, ";")
+					set genre1 to first item of GenreArray
+					set genre2 to second item of GenreArray
+					set genre3 to third item of GenreArray
+					set GenrePicker to display dialog DialogText buttons {genre1, genre2, genre3} default button 1
+					set ReleaseGenresStyles to button returned of GenrePicker
+				end if
+				
 				set frontmost to true
-				tell t
-					if ReleaseYear is not "" then
+				tell thetrack
+					set YearWritten to false
+					set GenresWritten to false
+					if ReleaseYear is not "" and WriteYear is true then
 						set year to ReleaseYear
-						if WriteComments is "yes" then
+						set YearWritten to true
+					end if
+					if ReleaseGenresStyles is not "" and WriteGenres is true then
+						set genre to ReleaseGenresStyles
+						set GenresWritten to true
+					end if
+					if YearWritten is true or GenresWritten is true then
+						set TagsWrittenCounter to TagsWrittenCounter + 1
+						if WriteToComments is true then
 							set comment to first item of QueryAnswer
 						end if
-						set TagsWrittenCounter to TagsWrittenCounter + 1
 					end if
 				end tell
 			end try
 		end repeat
-		display dialog "done"
+		set DialogText to "done: " & TagsWrittenCounter & " tags written"
+		display dialog DialogText buttons {"ok"}
 	end if
 end tell
