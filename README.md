@@ -1,11 +1,11 @@
 # Applescripts for Music: Year and/or Genre from Discogs
 
-Scenarios:
-- You have a disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern disco songs by Jessie Ware and Dua Lipa.
+Imagine these scenarios:
+- You have an awesome disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern songs by Jessie Ware and Dua Lipa.
 - You have ripped your cherished red and blue Beatles best-of CDs, released in 1993. To your frustration, these songs keep appearing in your "90s Rock" playlists.
-- You have a big folder of loose tracks you downloaded on Napster back in the 1990s, but they have no genre or year tags.
+- You have a big folder of loose tracks you downloaded on Napster back in the 1990s, but they have no genre or year tags. So none of these songs ever get included in your Genre or Decade playlists!
 
-Clearly, these songs need to be tagged with their *original* release year. But looking up every single song, checking its original release year, and writing that in the tags is tedious manual work. MusicBrainz Picard is pretty awesome, but will still tag compilation album tracks with the release date of the album, not years of the original tracks. This is where these scripts come in.
+Clearly, these songs need to be tagged with their *original* release year. But looking up every single song, checking its original release year, and writing that in the tags is tedious manual work. MusicBrainz Picard is pretty awesome, but will still tag compilation album tracks with the release date of the album, not the years when the original singles were released. This is where these scripts come in.
 
 How to install:
 1. Create new script in macOS Script Editor
