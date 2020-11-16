@@ -24,7 +24,7 @@ Clearly, these songs need to be tagged with their *original* release year, and p
 3. One genre: the script will the prompt you *for each track* which genre to write to the Genre field
   Multiple: the script will write all genres and styles in the Genre field, separated by semicolons
 4. Optionally writes the `"Artist - Release` of the Discogs item to the Comments field, so you can check afterwards which master release this year came from.
-5. The script performs a Discogs search for `Artist Song Name` for the master single, gets the Year, Genres and Styles back.
+5. The script performs a Discogs search for `Artist SongTitle` for the 'master release' of the single, gets back the Year, Genres and Styles.
 6. Writes the tags, and shows a dialog at the end how many songs were updated
 
 Note 1: even though this Discogs search query specifies that only singles should be included in the search, in fact Discogs seems to ignore this, and will also return years from albums, compilations etc. Hence, the option to write Artist - Release to the comments field, so you can check. This script is not perfect, various things can make the search not work: special characters, misspellings, multiple artists, etc.
