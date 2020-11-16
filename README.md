@@ -1,4 +1,4 @@
-# Certuna's Applescripts for Music
+# certuna's Applescripts for Music
 
 # Script 1: Automatic retrieval of Year and/or Genres from Discogs
 
