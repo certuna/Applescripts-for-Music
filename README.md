@@ -23,3 +23,11 @@ Clearly, these songs need to be tagged with their *original* release year. But l
 
 Note: even though this Discogs search query specifies that only singles should be included in the search, in fact Discogs seems to ignore this, and will also return years from albums, compilations etc. Hence, the option to write Artist - Release to the comments field, so you can check.
 
+# Script 2: YearGenreFromDiscogs
+
+1. Select one or more tracks, run the script
+2. The script performs a Discogs search for "Artist Song Name" for the master single, gets the year and the genres back
+3. Writes the year in the Year field, and the genres in the Genres field, separated by semicolons
+4. Optionally writes the "Artist - Release" of the Discogs item to the Comments field, so you can check afterwards which master release this year came from.
+
+Note: I am aware that semicolons as genre separators are non-standard. Multipe genres are not allowed *at all* in id3v2.3, and are defined as null separated strings in id3v2.4. However, Apple's Music app cannot handle null-separated multi-valued fields (details: if the tags are UTF-8 encoded it will display only the first genre, if it's ISO-8859-1 encoded it will show it like this: "RockPopReggae"). Apple should hang their heads in shame. Meanwhile in the real world, while technically non-standard, semicolon-separated genres are supported by many other players.
