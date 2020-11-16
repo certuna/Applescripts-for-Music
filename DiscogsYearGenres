@@ -50,20 +50,24 @@ to QueryDiscogs(ArtistSong, nthItem)
 	
 end QueryDiscogs
 
-set Question to display dialog "Do you want to update Year, Genre or both" buttons {"Year", "Genre(s)", "Both"}
+set WriteMultipleGenres to true
+set WriteYear to false
+set WriteGenres to false
+
+
+set Question to display dialog "Do you want to update Year, Genre or both?" buttons {"Year", "Genre", "Both"}
 if button returned of Question is "Year" or button returned of Question is "Both" then
 	set WriteYear to true
 end if
-if button returned of Question is "Genre(s)" or button returned of Question is "Both" then
+if button returned of Question is "Genre" or button returned of Question is "Both" then
 	set WriteGenres to true
+	set Question to display dialog "Choose one Genre manually or write multiple genres/styles per song?" buttons {"One", "Multiple"}
+	if button returned of Question is "One" then
+		set WriteMultipleGenres to false
+	end if
 end if
 
-set Question to display dialog "One Genre or multiple?" buttons {"One", "Multiple"}
-if button returned of Question is "One" then
-	set WriteMultipleGenres to false
-else
-	set WriteMultipleGenres to true
-end if
+
 
 set Question to display dialog "write the Discogs Artist - Title to the Comments field?" buttons {"yes", "no"} default button 2
 if button returned of Question is "yes" then
@@ -72,7 +76,8 @@ else
 	set WriteToComments to false
 end if
 
-tell application "Music" --change this to "iTunes" if you're on Mojave or earlier
+tell application "Music"
+	--tell application "iTunes" --replace the previous line with this if you're on Mojave or earlier
 	if selection is not {} then
 		set theselectedtracks to selection
 		set FilesCounter to 0
