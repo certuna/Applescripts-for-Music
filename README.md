@@ -1,5 +1,6 @@
-# Automatic retrieval of Year and/or Genres from Discogs
-# Applescripts for Music
+# Certuna's Applescripts for Music
+
+# Script 1: Automatic retrieval of Year and/or Genres from Discogs
 
 Imagine these scenarios:
 - You have an awesome disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern songs by Jessie Ware and Dua Lipa.
@@ -18,9 +19,9 @@ Clearly, these songs need to be tagged with their *original* release year, and p
 5. Put this script in `/Library/Music/Scripts` (all users) or `/User/johndoe/Library/Music/Scripts` (one user). If the folder doesn't exist, create it.
 6. When you open Music, there's a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
-# Script 1: DiscogsYearGenres
+# What it does:
 1. You select one or more tracks, you run the script `Discogs Year and Genres`
-2. Choose to write Year, Genre(s) or both
+2. You choose to write Year, Genre(s) or both
 3. One genre: the script will the prompt you *for each track* which genre to write to the Genre field
   Multiple: the script will write all genres and styles in the Genre field, separated by semicolons
 4. Optionally writes the `"Artist - Release` of the Discogs item to the Comments field, so you can check afterwards which master release this year came from.
