@@ -1,0 +1,92 @@
+to ExtractString(AllText, LeftEdge, RightEdge, nthValue)
+	set saveTID to text item delimiters
+	set text item delimiters to LeftEdge
+	set SecondChunk to text item (1 + nthValue) of AllText
+	set text item delimiters to RightEdge
+	set ExtractedValue to text item 1 of SecondChunk
+	set text item delimiters to saveTID
+	return ExtractedValue
+end ExtractString
+
+on theSplit(theString, theDelimiter)
+	set oldDelimiters to AppleScript's text item delimiters
+	set AppleScript's text item delimiters to theDelimiter
+	set theArray to every text item of theString
+	set AppleScript's text item delimiters to oldDelimiters
+	return theArray
+end theSplit
+
+to replaceText(find, replace, subject)
+	set prevTIDs to text item delimiters of AppleScript
+	set text item delimiters of AppleScript to find
+	set subject to text items of subject
+	
+	set text item delimiters of AppleScript to replace
+	set subject to subject as text
+	set text item delimiters of AppleScript to prevTIDs
+	
+	return subject
+end replaceText
+
+to QueryDiscogs(ArtistSong, nthItem)
+	
+	set Token to "please_insert_your_own_API_key_here"
+	set baseURL to "\"https://api.discogs.com/database/search?"
+	set AdditionalFilters to "&type=master&format_exact=Single\""
+	set AuthString to " -H \"Authorization: Discogs token=" & Token & "\""
+	set UserAgent to " --user-agent \"CertunaScript/0.1\""
+	set QueryString to "q=" & replaceText(" ", "+", ArtistSong)
+	set curl_command to "curl " & baseURL & QueryString & AdditionalFilters & AuthString & UserAgent
+	set return to do shell script curl_command
+	delay 1
+	set return to my replaceText("\"", "", return)
+	set Title to my ExtractString(return, "title: ", ", ", nthItem)
+	set ReleaseYear to my ExtractString(return, "year: ", ", ", nthItem)
+	
+	return {Title, ReleaseYear}
+	
+end QueryDiscogs
+
+set Question to display dialog "write the Discogs Artist - Title to the Comments field?" buttons {yes, no} default button 2
+set WriteToComments to button returned of Question
+
+if Token is "please_insert_your_own_API_key_here" then
+	display dialog "you need to edit this script first in macOS Script Editor and insert your own Discogs API key"
+	return
+end if
+
+tell application "Music"
+	if selection is not {} then
+		set sel to selection
+		set FilesCounter to 0
+		set TagsWrittenCounter to 0
+		repeat with t in sel
+			set FilesCounter to FilesCounter + 1
+			try
+				set fixed indexing to true
+				set ArtistString to my replaceText("& ", "", (get artist of t))
+				try
+					set ArtistString to first item of my theSplit(ArtistString, " ft ")
+				end try
+				set SongString to (get name of t)
+				try
+					set SongString to first item of my theSplit(SongString, " (")
+				end try
+				set ArtistSong to ArtistString & " " & SongString
+				set QueryAnswer to my QueryDiscogs(ArtistSong, 1)
+				set ReleaseYear to second item of QueryAnswer
+				set frontmost to true
+				tell t
+					if ReleaseYear is not "" then
+						set year to ReleaseYear
+						if WriteComments is "yes" then
+							set comment to first item of QueryAnswer
+						end if
+						set TagsWrittenCounter to TagsWrittenCounter + 1
+					end if
+				end tell
+			end try
+		end repeat
+		display dialog "done"
+	end if
+end tell
