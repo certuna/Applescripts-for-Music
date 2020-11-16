@@ -31,6 +31,7 @@ end replaceText
 to QueryDiscogs(ArtistSong, nthItem)
 	
 	set Token to "please_insert_your_own_API_key_here"
+	--	you can find your API key at https://www.discogs.com/settings/developers
 	set baseURL to "\"https://api.discogs.com/database/search?"
 	set AdditionalFilters to "&type=master&format_exact=Single\""
 	set AuthString to " -H \"Authorization: Discogs token=" & Token & "\""
@@ -38,7 +39,7 @@ to QueryDiscogs(ArtistSong, nthItem)
 	set QueryString to "q=" & replaceText(" ", "+", ArtistSong)
 	set curl_command to "curl " & baseURL & QueryString & AdditionalFilters & AuthString & UserAgent
 	set return to do shell script curl_command
-	delay 1
+	delay 1 -- do not remove, Discogs rate limits API requests to 60 per minute
 	set return to my replaceText("\"", "", return)
 	set Title to my ExtractString(return, "title: ", ", ", nthItem)
 	set ReleaseYear to my ExtractString(return, "year: ", ", ", nthItem)
