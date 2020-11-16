@@ -14,7 +14,7 @@ How to install:
 4. Save script as .scpt
 5. Put script in /Library/Music/Scripts (all users) or /User/johndoe/Library/Music/Scripts (one user)
 
-#YearFromDiscogs
+# YearFromDiscogs
 
 1. Select one or more tracks, run the script
 2. The script performs a Discogs search for "Artist Song Name" for the master single, gets the year back
