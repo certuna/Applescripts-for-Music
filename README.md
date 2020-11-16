@@ -16,7 +16,7 @@ Clearly, these songs need to be tagged with their *original* release year, and p
 3. Replace the text `please_insert_your_own_API_key_here` in the `QueryDiscogs` function with your own Discogs API key, see https://www.discogs.com/settings/developers
 4. If you are on macOS Mojave or older, you still have iTunes. Replace the `tell application "Music"` line with `tell application "iTunes"`
 4. Save the script as `Discogs Year and Genres.scpt`
-5. Put this script in `/Library/Music/Scripts` (all users) or `/User/johndoe/Library/Music/Scripts` (one user). If the folder doesn't exist, create it.
+5. Put this file in `/Library/Music/Scripts` (all users) or `/User/johndoe/Library/Music/Scripts` (one user). If the folder doesn't exist, create it.
 6. When you open Music, there's a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 # What it does:
