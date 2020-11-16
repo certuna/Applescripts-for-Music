@@ -20,7 +20,7 @@ Clearly, these songs need to be tagged with their *original* release year, and p
 6. When you open Music, there's a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 # What it does:
-1. You select one or more tracks, you run the script `Discogs Year and Genres`
+1. You select one or more songs in Music, you run the script `Discogs Year and Genres`
 2. You choose to write Year, Genre(s) or both
 3. One genre: the script will the prompt you *for each track* which genre to write to the Genre field
   Multiple: the script will write all genres and styles in the Genre field, separated by semicolons
