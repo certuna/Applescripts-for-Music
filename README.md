@@ -17,7 +17,7 @@ Clearly, these songs need to be tagged with their *original* release year, and p
 4. If you are on macOS Mojave or older, you still have iTunes. Replace the `tell application "Music"` line with `tell application "iTunes"`
 4. Save the script as `Discogs Year and Genres.scpt`
 5. Put this file in `/Library/Music/Scripts` (all users) or `/User/johndoe/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `.../iTunes/Scripts`)
-6. When you open Music, there's a scripts dropdown menu in the top menu bar between `Window` and `Help`
+6. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 # What it does:
 1. You select one or more songs in Music, you run the script `Discogs Year and Genres`
