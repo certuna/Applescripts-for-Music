@@ -2,7 +2,7 @@
 
 # Script 1: Automatic retrieval of Year and/or Genres from Discogs
 
-Imagine these scenarios:
+You are happy macOS user, and you've successfully survived the transition from iTunes to Music. You might like this If you have a sizeable music library these scenarios:
 - You have an awesome disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern songs by Jessie Ware and Dua Lipa.
 - You have ripped your cherished red and blue Beatles best-of CDs, released in 1993. To your frustration, these songs keep appearing in your "90s Rock" playlists.
 - You have a big folder of loose tracks you downloaded on Napster back in the 1990s because you loved the videos on MTV! But they have no genre or year tags. So none of these songs ever get included in your Genre or Decade playlists, and this makes you sad.
