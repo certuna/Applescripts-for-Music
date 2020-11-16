@@ -19,14 +19,26 @@ Clearly, these songs need to be tagged with their *original* release year, and p
 5. Put this file in `/Library/Music/Scripts` (all users) or `/User/johndoe/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `.../iTunes/Scripts`)
 6. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
-# What it does:
+# How it works in practice:
 1. You select one or more songs in Music, you run the script `Discogs Year and Genres`
 2. You choose to write Year, Genre or both
-3. **One genre**: the script will the prompt you *for each track* which genre to write to the Genre field. **Multiple**: the script will write all genres and styles in the Genre field, separated by semicolons
+
+![screenshot1](images/1.png)
+
+3. **One genre**: the script will the prompt you *for each track* for the single genre to write. **Multiple**: the script will write all genres and styles in the Genre field, separated by semicolons, for example `Pop;New Wave;Synthpop`
+
+![screenshot2](images/2.png)
 
 4. Optionally writes the `"Artist - Release"` of the Discogs item to the Comments field, so you can check afterwards which master release this year came from.
+
+![screenshot3](images/3.png)
+
 5. The script performs a Discogs search for `Artist SongTitle` for the 'master release' of the single, gets back the Year, Genres and Styles.
-6. Writes the tags, and shows a dialog at the end how many songs were updated
+6. Writes the tags. If you've chosen **One Genre**, it gives you a popup for each track to pick which Genre/Style to apply.
+
+![screenshot4](images/4.png)
+
+7. and shows a dialog at the end how many songs were updated
 
 Note 1: even though this Discogs search query specifies that only singles should be included in the search, in fact Discogs seems to ignore this, and will also return years from albums, compilations etc. Hence, the script optionally writes the Discogs "Artist - Release" to the comments field, so you can check where the hell Discogs got that year from. This script is not perfect, various things can make the search not work: special characters, misspellings, multiple artists, etc.
 
