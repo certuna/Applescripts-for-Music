@@ -18,7 +18,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 3. Replace the text `please_insert_your_own_API_key_here` in the `QueryDiscogs` function with your own [Discogs API key](https://www.discogs.com/settings/developers) (you need to set up a Discogs account if you haven't got one)
 4. If you are on macOS Mojave or older, you still have iTunes. Replace the `tell application "Music"` line with `tell application "iTunes"`
 4. Save the script as `Discogs Year and Genres.scpt`
-5. Put this file in `/Library/Music/Scripts` (all users) or `/User/johndoe/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `.../iTunes/Scripts`)
+5. Put this file in `/Library/Music/Scripts` (all users) or `/User/johndoe/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `Library/iTunes/Scripts`)
 6. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 ### How it works in practice:
