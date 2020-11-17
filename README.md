@@ -8,7 +8,7 @@ You are a happy macOS user, and you've successfully survived the transition from
 - You have a big folder of loose tracks you downloaded on Napster back in the 1990s because you loved the videos on MTV! But they have no genre or year tags. So none of these songs ever get included in your Genre or Decade playlists, and this makes you sad.
 - You have a compilation album with collected hit singles, but they're pretty diverse: Pop, Punk Rock, Hip-Hop, House, Reggaeton. But unfortunately, all songs are tagged with the same genre(s).
 - You've started using a new music player that supports multiple genres, but all your tracks are tagged with one genre.
-- You might have tried auto-tagging genres with last.fm or MusicBrainz but you've found out that the genres in those databases are all over the place.
+- You might have tried auto-tagging genres with some tagger using last.fm or MusicBrainz but you've found out that the genres in those databases are all over the place.
 
 Clearly, for search/filter/smart playlists to work as expected, these songs need to be tagged with their *original* release year, and preferably, the genre of the specific song. But looking up every single song, checking its original release year and genre(s), and writing that in the tags is tedious manual work. MusicBrainz Picard is pretty awesome, but will still tag (most) compilation album tracks with the release date of the album, not the years when the original singles were released. Genres also only go on the album level. This is where this script comes in: it will try to find the *original single* on Discogs, and tag the song with that year and its specific genre(s).
 
