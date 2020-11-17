@@ -39,7 +39,7 @@ to QueryDiscogs(ArtistSong, nthItem)
 	set QueryString to "q=" & replaceText(" ", "+", ArtistSong)
 	set curl_command to "curl " & baseURL & QueryString & AdditionalFilters & AuthString & UserAgent
 	set return to do shell script curl_command
-	delay 0.3 -- do not remove, Discogs rate limits API requests to 60 per minute
+	delay 1 -- do not remove, Discogs rate limits API requests to 60 per minute
 	set return to my replaceText("\"", "", return)
 	set Title to my ExtractString(return, "title: ", ", ", nthItem)
 	set ReleaseYear to my ExtractString(return, "year: ", ", ", nthItem)
