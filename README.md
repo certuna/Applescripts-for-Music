@@ -1,6 +1,6 @@
 # certuna's Applescripts for Music
 
-# Script 1: Automatic retrieval of Year and/or Genres from Discogs
+## Script 1: Automatic retrieval of Year and/or Genres from Discogs
 
 You are happy macOS user, and you've successfully survived the transition from iTunes to the new Music app. You might like the interface, the scriptabilty, or you simply need Music to sync music to your iPhone or iPad, or stream to your AppleTV. If you have a sizeable music library, you will probably recognise these scenarios:
 - You have an awesome disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern songs by Jessie Ware and Dua Lipa.
@@ -11,7 +11,7 @@ You are happy macOS user, and you've successfully survived the transition from i
 
 Clearly, for search/filter/smart playlists to work as expected, these songs need to be tagged with their *original* release year, and preferably, the genre of the specific song. But looking up every single song, checking its original release year and genre(s), and writing that in the tags is tedious manual work. MusicBrainz Picard is pretty awesome, but will still tag compilation album tracks with the release date of the album, not the years when the original singles were released. Genres also only go on the album level. This is where this script comes in: it will try to find the original single on Discogs, and tag the song with that year and its specific genre(s).
 
-# How to install:
+### How to install:
 1. Create new script in macOS Script Editor
 2. Copy/paste the code from [DiscogsYearGenres.txt](https://github.com/certuna/Applescripts-for-Music/raw/main/DiscogsYearGenres.txt) to the new Applescript 
 3. Replace the text `please_insert_your_own_API_key_here` in the `QueryDiscogs` function with your own [Discogs API key](https://www.discogs.com/settings/developers) (you need to set up a Discogs account if you haven't got one)
@@ -20,7 +20,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 5. Put this file in `/Library/Music/Scripts` (all users) or `/User/johndoe/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `.../iTunes/Scripts`)
 6. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
-# How it works in practice:
+### How it works in practice:
 1. You select one or more songs in Music, you run the script `Discogs Year and Genres`
 
 ![screenshot1](images/1.png)
