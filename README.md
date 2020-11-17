@@ -39,7 +39,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 ![screenshot4](images/4.png)
 
 5. The script performs a Discogs search for `Artist SongTitle` for the 'master release' of the single, gets back the Year, Genres and Styles.
-6. The script writes the tags. If you've chosen **Choose Genre**, it gives you a popup for each track to pick which Genre to apply.
+6. The script writes the tags. If you've chosen **Choose Genre**, it gives you a popup for each track to pick which Genre to apply (note: max 3 items - blame Apple since AppleScript dialog boxes have three buttons max)
 
 ![screenshot6](images/6.png)
 
