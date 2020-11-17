@@ -39,7 +39,7 @@ to QueryDiscogs(ArtistSong, nthItem)
 	set QueryString to "q=" & replaceText(" ", "+", ArtistSong)
 	set curl_command to "curl " & baseURL & QueryString & AdditionalFilters & AuthString & UserAgent
 	set return to do shell script curl_command
-	delay 1 -- do not remove, Discogs rate limits API requests to 60 per minute
+	delay 0.3 -- do not remove, Discogs rate limits API requests to 60 per minute
 	set return to my replaceText("\"", "", return)
 	set Title to my ExtractString(return, "title: ", ", ", nthItem)
 	set ReleaseYear to my ExtractString(return, "year: ", ", ", nthItem)
@@ -53,24 +53,27 @@ end QueryDiscogs
 set WriteMultipleGenres to true
 set WriteYear to false
 set WriteGenres to false
+set ManualGenre to false
 
-
-set Question to display dialog "Do you want to update Year, Genre or both?" buttons {"Year", "Genre", "Both"}
+set Question to display dialog "Do you want to update Year, Genre or both?" buttons {"Year", "Genre", "Both"} default button 3
 if button returned of Question is "Year" or button returned of Question is "Both" then
 	set WriteYear to true
 end if
 if button returned of Question is "Genre" or button returned of Question is "Both" then
 	set WriteGenres to true
-	set Question to display dialog "Choose one Genre manually or write multiple genres/styles per song?" buttons {"One", "Multiple"}
-	if button returned of Question is "One" then
+	set Question to display dialog "Choose a Genre per song manually, write one Genre automatically, or write all (multiple) Genres?" buttons {"Choose Genre", "One Genre (Auto)", "Multiple Genres (Auto)"} default button 2
+	if button returned of Question is not "Multiple Genres (Auto)" then
 		set WriteMultipleGenres to false
+	end if
+	if button returned of Question is "Choose Genre" then
+		set ManualGenre to true
 	end if
 end if
 
 
 
-set Question to display dialog "write the Discogs Artist - Title to the Comments field?" buttons {"yes", "no"} default button 2
-if button returned of Question is "yes" then
+set Question to display dialog "Write the Discogs Artist - Title to the Comments field?" buttons {"Yes", "No"} default button 2
+if button returned of Question is "Yes" then
 	set WriteToComments to true
 else
 	set WriteToComments to false
@@ -99,22 +102,46 @@ tell application "Music"
 				set QueryAnswer to my QueryDiscogs(ArtistSong, 1)
 				set ReleaseYear to second item of QueryAnswer
 				set ReleaseGenres to third item of QueryAnswer
+				set ReleaseGenres to my replaceText(", ", ";", ReleaseGenres)
 				set ReleaseStyles to fourth item of QueryAnswer
+				set ReleaseStyles to my replaceText(", ", ";", ReleaseStyles)
+				
 				set ReleaseGenresStyles to ReleaseGenres
 				if ReleaseStyles is not "" then
-					set ReleaseGenresStyles to ReleaseGenresStyles & ", " & ReleaseStyles
+					set ReleaseGenresStyles to ReleaseGenresStyles & ";" & ReleaseStyles
 				end if
-				set ReleaseGenresStyles to my replaceText(", ", ";", ReleaseGenresStyles)
 				
-				if WriteMultipleGenres is false then
+				if ManualGenre is true then
 					set DialogText to "Choose genre for " & (get artist of thetrack) & " - " & (get name of thetrack)
-					set GenreArray to my theSplit(ReleaseGenresStyles, ";")
-					set genre1 to first item of GenreArray
-					set genre2 to second item of GenreArray
-					set genre3 to third item of GenreArray
-					set GenrePicker to display dialog DialogText buttons {genre1, genre2, genre3} default button 1
-					set ReleaseGenresStyles to button returned of GenrePicker
+					if ReleaseGenresStyles contains ";" then
+						set GenreArray to my theSplit(ReleaseGenresStyles, ";")
+					else
+						set first item of GenreArray to ReleaseGenresStyles
+					end if
+					if length of GenreArray is 1 then
+						set GenreStringToWrite to first item of GenreArray
+					else
+						if length of GenreArray is 2 then
+							set GenrePicker to display dialog DialogText buttons {first item of GenreArray, second item of GenreArray} default button 2
+						else
+							set GenrePicker to display dialog DialogText buttons {first item of GenreArray, second item of GenreArray, third item of GenreArray} default button 2
+						end if
+						set GenreStringToWrite to button returned of GenrePicker
+					end if
+					
+				else
+					if WriteMultipleGenres is false then
+						if ReleaseStyles contains ";" then
+							set GenreStringToWrite to first item of theSplit(ReleaseStyles, ";")
+						else
+							set GenreStringToWrite to ReleaseStyles
+						end if
+					else
+						set GenreStringToWrite to ReleaseGenresStyles
+						
+					end if
 				end if
+				
 				
 				set frontmost to true
 				tell thetrack
@@ -124,8 +151,8 @@ tell application "Music"
 						set year to ReleaseYear
 						set YearWritten to true
 					end if
-					if ReleaseGenresStyles is not "" and WriteGenres is true then
-						set genre to ReleaseGenresStyles
+					if GenreStringToWrite is not "" and WriteGenres is true then
+						set genre to GenreStringToWrite
 						set GenresWritten to true
 					end if
 					if YearWritten is true or GenresWritten is true then
@@ -137,7 +164,7 @@ tell application "Music"
 				end tell
 			end try
 		end repeat
-		set DialogText to "done: " & TagsWrittenCounter & " tags written"
+		set DialogText to "Done: " & TagsWrittenCounter & " tags written"
 		display dialog DialogText buttons {"ok"}
 	end if
 end tell
