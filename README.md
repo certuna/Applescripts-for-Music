@@ -28,7 +28,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 
 ![screenshot2](images/2.png)
 
-3. **Choose Genre**: the script will the prompt you *for each track* for the Genre to write. **One Genre (Auto)** the script will write only one Genre **Multiple Genres (Auto)**: the script will write all genres and styles in the Genre field, separated by semicolons, for example `Pop;New Wave;Synthpop`
+3. **Choose Genre**: the script will the prompt you *for each track* for the Genre to write. **One Genre (Auto)** the script will write only one Genre. **Multiple Genres (Auto)**: the script will write all genres and styles in the Genre field, separated by semicolons, for example `Pop;New Wave;Synthpop`
 
 ![screenshot3](images/3.png)
 
