@@ -22,28 +22,33 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 # How it works in practice:
 1. You select one or more songs in Music, you run the script `Discogs Year and Genres`
 
-![screenshot6](images/6/png)
+![screenshot1](images/1.png)
 
 2. You choose to write Year, Genre or both
 
-![screenshot1](images/1.png)
+![screenshot2](images/2.png)
 
 3. **One genre**: the script will the prompt you *for each track* for the single genre to write. **Multiple**: the script will write all genres and styles in the Genre field, separated by semicolons, for example `Pop;New Wave;Synthpop`
 
-![screenshot2](images/2.png)
+![screenshot3](images/3.png)
 
 4. The script can optionally write the `"Artist - Release"` of the Discogs item into the Comments field, so you can check afterwards which master release this year came from.
 
-![screenshot3](images/3.png)
+![screenshot4](images/4.png)
 
 5. The script performs a Discogs search for `Artist SongTitle` for the 'master release' of the single, gets back the Year, Genres and Styles.
 6. The script writes the tags. If you've chosen **One Genre**, it gives you a popup for each track to pick which Genre/Style to apply.
 
-![screenshot4](images/4.png)
+![screenshot6](images/6.png)
 
 7. and shows a dialog at the end how many songs were updated
 
-![screenshot5](images/5.png)
+![screenshot7](images/7.png)
+
+8. The Year and Genre are updated
+
+![screenshot8](images/8.png)
+
 
 **Note 1**: even though this Discogs search query specifies that only singles should be included in the search, in fact Discogs seems to ignore this, and will also return years from albums, compilations etc. Hence, the script optionally writes the Discogs "Artist - Release" to the comments field, so you can check where the hell Discogs got that year from. This script is not perfect, various things can make the search not work: special characters, misspellings, multiple artists, etc.
 
