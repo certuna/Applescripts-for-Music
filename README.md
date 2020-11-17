@@ -1,6 +1,6 @@
 # certuna's Applescripts for Music
 
-## Script 1: Automatic retrieval of Year and/or Genres from Discogs
+## Script 1: Automatic tagging of Year and/or Genres from Discogs
 
 You are happy macOS user, and you've successfully survived the transition from iTunes to the new Music app. You might like the interface, the scriptabilty, or you simply need Music to sync music to your iPhone or iPad, or stream to your AppleTV. If you have a sizeable music library, you will probably recognise these scenarios:
 - You have an awesome disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern songs by Jessie Ware and Dua Lipa.
