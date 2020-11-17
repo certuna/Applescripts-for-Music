@@ -50,6 +50,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 
 ![screenshot8](images/8.png)
 
+### Notes:
 
 **Note 1**: even though this Discogs search query specifies that only singles should be included in the search, in fact Discogs seems to ignore this, and will also return years from albums, compilations etc. Hence, the script optionally writes the Discogs "Artist - Release" to the comments field, so you can check where the hell Discogs got that year from. This script is not perfect, various things can make the search not return the 'correct' master release: special characters, misspellings, multiple artists, etc. Feel free to tweak the code to make these searches more reliable.
 
