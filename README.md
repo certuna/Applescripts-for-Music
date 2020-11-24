@@ -38,7 +38,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 
 ![screenshot4](images/4.png)
 
-5. The script performs a Discogs search for `Artist SongTitle` for the 'master release' of the single, gets back the Year, Genres and Styles.
+5. The script performs a Discogs API search for `Artist SongTitle` for the 'master release' of the single, gets back the Year, Genres and Styles.
 6. The script writes the tags. If you've chosen **Choose Genre** and Discogs has more than one Genre/Style for the release, you will get a popup to pick which Genre to apply (note: yes 3 items max - blame Apple since AppleScript dialog boxes max out at three buttons)
 
 ![screenshot6](images/6.png)
@@ -53,7 +53,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 
 ### Notes:
 
-**Note 1**: even though this Discogs search query specifies that only singles should be included in the search (with `&format_exact=Single`), in fact Discogs seems to ignore this, and will also return years from albums, compilations etc. Hence, the script optionally writes the Discogs "Artist - Release" to the comments field, so you can check where the hell Discogs got that year from. This script is not perfect, various things can make the search not return the 'correct' master release: special characters, misspellings, multiple artists, etc. Feel free to tweak the code to make these searches more reliable.
+**Note 1**: even though this Discogs search query specifies that only singles should be included in the search (with `&format_exact=Single`), in fact Discogs seems to ignore this, and will also return years from albums, compilations etc. Hence, I've added the option to write the Discogs "Artist - Release" to the comments field, so you can check where the hell Discogs got that year from. This script is not perfect, various things can make the search not return the 'correct' master release: special characters, misspellings, multiple artists, etc. Feel free to tweak the code to make these searches more reliable.
 
 **Note 2**: I am aware that semicolons as genre separators are non-standard. Technically, multiple genres are not allowed *at all* in [id3v2.3](https://id3.org/id3v2.3.0#Declared_ID3v2_frames), and are defined as null-separated strings in [id3v2.4](https://id3.org/id3v2.4.0-frames). However, a) while non-standard, semicolon-separated multiple genres are nonetheless supported by many other players (such as Windows Media Player, Kodi, Plex, MusicBee, Emby, foobar2000 and DBPowerAmp), and b) neither iTunes nor Apple's Music app can handle null-separated genres  (more precise: if the id3v2.4 tag is UTF-8 encoded, multiple genres look like this: `RockPopReggae`, it the tag is ISO-8859-1 encoded it will display only the first genre `Rock`). Apple developers should hang their heads in shame, it's twenty (!) years after id3v2.4 was published and they still can't be bothered to implement it correctly. So for tagging in Music, the choice is to either tag one genre, or tag multiple genres with another separator. I might implement 'proper' null-separated genres in the future, but first I'd have to figure out a way in Applescript to detect if a tag is UTF-8 encoded id3v2.4.
 
