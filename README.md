@@ -57,7 +57,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 
 **Note 2**: I am aware that semicolons as genre separators are non-standard, not for mp3 nor for mp4/aac. Technically, multiple genres are not allowed *at all* in [id3v2.3](https://id3.org/id3v2.3.0#Declared_ID3v2_frames), and are defined as null-separated strings in [id3v2.4](https://id3.org/id3v2.4.0-frames). However:
 - while non-standard, semicolon-separated multiple genres are nonetheless supported by many other players (such as Windows Media Player, Kodi, Plex, MusicBee, Emby, foobar2000 and DBPowerAmp)
-- iTunes/Apple Music cannot handle null-separated id3 frames (more precise: if the id3v2.4 frame is UTF-8 encoded, multiple genres look like this: `RockPopReggae`, if the frame is ISO-8859-1 encoded it will display only the first genre `Rock`). Apple developers should hang their heads in shame, it's been 20+ (!) years since id3v2.4 was published and they still can't be bothered to implement it correctly.
+- iTunes/Apple Music cannot handle null-separated strings in id3 frames (more precise: if the id3v2.4 frame is UTF-8 encoded, multiple genres look like this: `RockPopReggae`, if the frame is ISO-8859-1 encoded it will display only the first genre `Rock`). Apple developers should hang their heads in shame, it's been 20+ (!) years since id3v2.4 was published and they still can't be bothered to implement it correctly.
 
 Anyway: for tagging in Apple Music, the choice is to either tag one genre, or tag multiple genres with another separator. I might implement 'proper' null-separated genres in the future, but first I'd have to figure out a way in Applescript to detect if a frame is UTF-8 encoded id3v2.4.
 
