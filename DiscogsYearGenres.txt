@@ -158,7 +158,11 @@ tell application "Music"
 					if YearWritten is true or GenresWritten is true then
 						set TagsWrittenCounter to TagsWrittenCounter + 1
 						if WriteToComments is true then
-							set comment to first item of QueryAnswer
+							if comment = "" then
+								set comment to first item of QueryAnswer
+							else
+								set comment to comment & ";" & first item of QueryAnswer
+							end if
 						end if
 					end if
 				end tell
