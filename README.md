@@ -1,5 +1,8 @@
 # certuna's Applescripts for Music
 
+[Script 1: Automatic tagging of Year and/or Genres from Discogs](http://link.com)
+[Script 2: Explicit to Song Title](http://link.com)
+
 ## Script 1: Automatic tagging of Year and/or Genres from Discogs
 
 You are a happy macOS user, and you've successfully survived the transition from iTunes to the new Music app, introduced with macOS Catalina last year. You might like the interface, the scriptabilty, or you simply need Music to sync music to your iPhone or iPad, or stream to your AppleTV. If you have a sizeable music library, you will probably recognise these scenarios:
