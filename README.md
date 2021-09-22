@@ -1,6 +1,7 @@
 # certuna's Applescripts for Music
 
 [Script 1: Automatic tagging of Year and/or Genres from Discogs](#script-1-automatic-tagging-of-year-andor-genres-from-discogs)
+
 [Script 2: Explicit to Song Title](#script-2-explicit-to-song-title)
 
 ## Script 1: Automatic tagging of Year and/or Genres from Discogs
