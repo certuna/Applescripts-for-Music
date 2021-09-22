@@ -64,3 +64,9 @@ Anyway: for tagging in Apple Music, the choice is to either tag one genre, or ta
 **Note 3**: Some people seem to think that the Year field in iTunes/Music should contain the re-release/reissue year. But if you read the id3v2.4 specs for `TDRL` (Release Time, the field used for Year in the iTunes/Music application, and Year/Release Year/Release Date in most other players), it clearly states: `The 'Release time' frame contains a timestamp describing when the audio was first released.` (i.e., not when it was re-released on some compilation, _first_ released). This is exactly what the script does: it looks up the date when the single was first released.
 
 **Note 4**: This is not a fast script. Discogs only allows 60 requests per minute for their API, so the code intentionally has a 1 second delay per track built in. If you let this script loose on big selections, go grab a cup of coffee, walk your dog, look at cat pictures on the internet.
+
+## Script 2: Explicit to Song Title
+
+Unfortunately, Apple Music will only read the Explicit tag for MP4 (AAC/Apple Lossless) files, not MP3 (id3v2) files.
+
+This script does the next best thing: it simply allows you to add or remove an Explicit symbol (🅴) to the Song Title. Select the files, start the script, click `Add` or `Remove`, and there you go.
