@@ -20,7 +20,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 1. Download the `Discogs Year and Genres.applescript` file from this repository to your drive and open it in Script Editor
 2. Replace the text `please_insert_your_own_API_key_here` in the `QueryDiscogs` function with your own [Discogs API key](https://www.discogs.com/settings/developers) (you need to set up a Discogs account if you haven't got one)
 3. If you are on macOS Mojave or older, you still have iTunes. Replace the `tell application "Music"` line with `tell application "iTunes"`
-4. Save the script
+4. Save the script as `Discogs Year and Genres.scpt`
 5. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
 6. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
@@ -75,9 +75,10 @@ Apple Music will only read the Explicit tag for MP4 (AAC/Apple Lossless) files, 
 This script does the next best thing: it simply allows you to add or remove an Explicit symbol (🅴) to the Song Title, so "Dick In A Box" becomes "Dick In A Box 🅴". 
 
 ### How to install:
-1. Download the `Explicit to Song Title.applescript` file from this repository to your drive
-2. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
-3. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
+1. Download the `Explicit to Song Title.applescript` file from this repository to your drive and open it in Script Editor
+4. Save the script as `Explicit to Song Title.scpt`
+4. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
+5. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 ### How it works in practice:
 Select the files you want to tag, start the script, click `Add` or `Remove`, and there you go.
