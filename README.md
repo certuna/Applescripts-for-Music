@@ -81,4 +81,4 @@ This script does the next best thing: it simply allows you to add or remove an E
 5. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 ### How it works in practice:
-Select the files you want to tag, start the script, click `Add` or `Remove`, and there you go.
+Select the files you want to tag, start the script, click `Add` or `Remove`, and watch the magic happen.
