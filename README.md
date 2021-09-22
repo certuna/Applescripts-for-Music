@@ -69,4 +69,4 @@ Anyway: for tagging in Apple Music, the choice is to either tag one genre, or ta
 
 Unfortunately, Apple Music will only read the Explicit tag for MP4 (AAC/Apple Lossless) files, not MP3 (id3v2) files.
 
-This script does the next best thing: it simply allows you to add or remove an Explicit symbol (🅴) to the Song Title, so "Dick In A Box" becomes "Dick In A Box 🅴". Select the files, start the script, click `Add` or `Remove`, and there you go.
+This script does the next best thing: it simply allows you to add or remove an Explicit symbol (🅴) to the Song Title, so `Dick In A Box` becomes `Dick In A Box 🅴`. Select the files, start the script, click `Add` or `Remove`, and there you go.
