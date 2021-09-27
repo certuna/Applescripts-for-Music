@@ -2,7 +2,7 @@
 
 [Script 1: Automatic tagging of Year and/or Genres from Discogs](#script-1-automatic-tagging-of-year-andor-genres-from-discogs)
 
-Script 2: Tagging non-Apple fields
+[Script 2: Tagging non-Apple fields](#script-2-non-apple-tags)
 
 [Script 3: Explicit to Song Title](#script-3-explicit-to-song-title)
 
@@ -72,13 +72,20 @@ So: for genre tagging in Apple Music, the choice is to either tag one genre, or 
 
 ## Script 2: Non-Apple Tags
 
-Apple Music only supports a limited subset of tags, many fields like Language, Record Label or Disc Subtitle can only be set using external tagging apps.
+Apple Music only supports a limited subset of tags, many fields like _Language_, _Record Label_ or _Disc Subtitle_ can only be set using external tagging apps.
 
-This script allows you to set them from within Apple Music, using the command line utilities of two "real" tagging apps in the background.
+This script allows you to set them from within Apple Music, using the command line utilities of two "real" tagging apps in the background:
 
 [Ex Falso](https://quodlibet.readthedocs.io/en/latest/downloads.html#macosx) (containing the command line utility "operon")
 
 [kid3](https://kid3.kde.org/) (containing the command line utility "kid3-cli")
+
+### How to install:
+1. Install either Ex Falso or kid3 in your `/Applications` folder
+2. Download the `Non-Apple Tags.applescript` file from this repository to your drive and open it in Script Editor
+3. Save the script as `Non-Apple Tags.scpt`
+4. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
+5. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 ## Script 3: Explicit to Song Title
 
@@ -88,9 +95,9 @@ This script does the next best thing: it simply takes the Song Title and adds (o
 
 ### How to install:
 1. Download the `Explicit to Song Title.applescript` file from this repository to your drive and open it in Script Editor
-4. Save the script as `Explicit to Song Title.scpt`
-4. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
-5. When you open Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
+2. Save the script as `Explicit to Song Title.scpt`
+3. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
+4. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 ### How it works in practice:
 Select the files you want to tag, start the script, click `Add` or `Remove`, and watch the magic happen.
