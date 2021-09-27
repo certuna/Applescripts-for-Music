@@ -2,7 +2,9 @@
 
 [Script 1: Automatic tagging of Year and/or Genres from Discogs](#script-1-automatic-tagging-of-year-andor-genres-from-discogs)
 
-[Script 2: Explicit to Song Title](#script-2-explicit-to-song-title)
+Script 2: Tagging non-Apple fields
+
+[Script 3: Explicit to Song Title](#script-3-explicit-to-song-title)
 
 ## Script 1: Automatic tagging of Year and/or Genres from Discogs
 
@@ -68,7 +70,16 @@ So: for genre tagging in Apple Music, the choice is to either tag one genre, or 
 
 **Note 4**: This is not a fast script. Discogs only allows 60 requests per minute for their API, so the code intentionally has a 1 second delay per track built in. If you let this script loose on big selections, go grab a cup of coffee, walk your dog, look at cat pictures on the internet.
 
-## Script 2: Explicit to Song Title
+## Script 2: Non-Apple Tags
+
+Apple Music only supports a limited subset of tags, many fields like Language, Record Label or Disc Subtitle can only be set using external tagging apps.
+
+This script allows you to set them from within Apple Music, using the command line utilities of two "real" tagging apps in the background.
+
+[Ex Falso](https://quodlibet.readthedocs.io/en/latest/downloads.html#macosx) (containing the command line utility "operon")
+[kid3](https://kid3.kde.org/) (containing the command line utility "kid3-cli")
+
+## Script 3: Explicit to Song Title
 
 Apple Music will only read the Explicit tag for MP4 (AAC/Apple Lossless) files, not MP3 (id3v2) files.
 
