@@ -87,11 +87,14 @@ This script allows you to set them from within Apple Music, using the command li
 4. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
 5. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
+### How it works in practice:
+Select the files you want to tag, start the script, click `Add` or `Remove`, and watch the magic happen.
+
 ## Script 3: Explicit to Song Title
 
-Apple Music will only read the Explicit tag for MP4 (AAC/Apple Lossless) files, not MP3 (id3v2) files.
+Apple Music will only read the Explicit tag for MP4 (AAC/Apple Lossless), not MP3 (id3v2).
 
-This script does the next best thing: it simply takes the Song Title and adds (or removes) an Explicit symbol (🅴), so "Dick In A Box" becomes "Dick In A Box 🅴". 
+This script does the next best thing: it simply takes the Song Title and adds (or removes) an Explicit symbol (🅴), so "Dick In A Box" becomes "Dick In A Box 🅴". Works in any music player.
 
 ### How to install:
 1. Download the `Explicit to Song Title.applescript` file from this repository to your drive and open it in Script Editor
