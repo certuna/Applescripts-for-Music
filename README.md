@@ -81,7 +81,7 @@ This script allows you to set them from within Apple Music, using the command li
 [kid3](https://kid3.kde.org/) (contains the command line utility `kid3-cli`)
 
 ### How to install:
-1. Install either Ex Falso or kid3 in your `/Applications` folder
+1. Install either Ex Falso or kid3 in your `/Applications` folder, and run them at least once to set the right permissions
 2. Download the `Non-Apple Tags.applescript` file from this repository to your drive and open it in Script Editor
 3. Save the script as `Non-Apple Tags.scpt`
 4. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
