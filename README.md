@@ -74,7 +74,7 @@ So: for genre tagging in Apple Music, the choice is to either tag one genre, or 
 
 Apple Music only supports a limited subset of tags, many fields like _Language_, _Record Label_ or _Disc Subtitle_ can only be set using external tagging apps.
 
-This script allows you to set them from within Apple Music, using the command line utilities of two "real" tagging apps in the background:
+This script allows you to set these "invisible" tags from within Apple Music, using the command line utilities of two "real" tagging apps in the background:
 
 [Ex Falso](https://quodlibet.readthedocs.io/en/latest/downloads.html#macosx) (contains the command line utility `operon`)
 
