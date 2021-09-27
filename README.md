@@ -77,6 +77,7 @@ Apple Music only supports a limited subset of tags, many fields like Language, R
 This script allows you to set them from within Apple Music, using the command line utilities of two "real" tagging apps in the background.
 
 [Ex Falso](https://quodlibet.readthedocs.io/en/latest/downloads.html#macosx) (containing the command line utility "operon")
+
 [kid3](https://kid3.kde.org/) (containing the command line utility "kid3-cli")
 
 ## Script 3: Explicit to Song Title
