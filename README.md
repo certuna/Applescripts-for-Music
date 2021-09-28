@@ -109,7 +109,7 @@ Select the files you want to tag, select the script from the drop-down menu, cli
 
 ## Script 4: Display All Tags
 
-See above, this script uses command line utilities `operon` or `kid3` in the background to display all tags of a song.
+This script uses command line utilities `operon` or `kid3` (see above) to display all tags of a song.
 
 ### How to install:
 1. Download the `Display All Tags.applescript` file from this repository to your drive and open it in Script Editor
