@@ -6,6 +6,8 @@
 
 [Script 3: Explicit to Song Title](#script-3-explicit-to-song-title)
 
+[Script 4: Display All Tags](#script-4-display-all-tags)
+
 ## Script 1: Automatic tagging of Year and/or Genres from Discogs
 
 You are a happy macOS user, and you've successfully survived the transition from iTunes to the new Music app, introduced with macOS Catalina last year. You might like the interface, the scriptabilty, or you simply need Music to sync music to your iPhone or iPad, or stream to your AppleTV. If you have a sizeable music library, you will probably recognise these scenarios:
@@ -103,4 +105,17 @@ This script does the next best thing: it simply takes the Song Title and adds (o
 4. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 ### How it works in practice:
-Select the files you want to tag, start the script, click `Add` or `Remove`, and watch the magic happen.
+Select the files you want to tag, select the script from the drop-down menu, click `Add` or `Remove`, and watch the magic happen.
+
+## Script 4: Display All Tags
+
+See above, this script uses command line utilities `operon` or `kid3` in the background to display all tags of a song.
+
+### How to install:
+1. Download the `Display All Tags.applescript` file from this repository to your drive and open it in Script Editor
+2. Save the script as `Display All Tags.scpt`
+3. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
+4. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
+
+### How it works in practice:
+Select the file you want to see, select the script from the drop-down menu.
