@@ -50,7 +50,7 @@ if (tagField is "media") or (tagField is "Media") then
 	set mediaList to {"CD", "DIG", "TT", "RAD", "MC"}
 	set tagValue to first item of (choose from list mediaList with prompt "Choose media type" default items {"CD"})
 else if (tagField is "language") or (tagField is "Language") then
-	set languageList to {"eng", "fra", "spa", "ger", "dut", "swe", "nor", "ita", "other"}
+	set languageList to {"eng", "fra", "spa", "ger", "ita", "dut", "swe", "por", "nor", "rus", "ara", "chi", "jpn", "kor", "hin", "other"}
 	set tagValue to first item of (choose from list languageList with prompt "Choose language" default items {"eng"})
 	if tagValue is "other" then
 		set tagValue to text returned of (display dialog "Enter language (three letter code)" default answer "" buttons {"Continue..."} default button 1)
