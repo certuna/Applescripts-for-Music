@@ -94,7 +94,7 @@ Select the files you want to tag, start the script, click `Add` or `Remove`, and
 
 ## Script 3: Explicit to Song Title
 
-Apple Music will only read the Explicit tag for MP4 (AAC/Apple Lossless), not MP3 (id3v2).
+Apple Music will only read the Explicit tag for MP4 (AAC/Apple Lossless), not MP3 (id3v2). You also cannot set it yourself.
 
 This script does the next best thing: it simply takes the Song Title and adds (or removes) an Explicit symbol (🅴), so "Dick In A Box" becomes "Dick In A Box 🅴". Works in any music player.
 
