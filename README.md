@@ -109,7 +109,7 @@ Select the files you want to tag, select the script from the drop-down menu, cli
 
 ## Script 4: Display All Tags
 
-This script uses command line utilities `operon` or `kid3` (see above) to display all tags of a song.
+Apple Music only supports a limited subset of tags. This script uses command line utilities `operon` or `kid3` (see above) to display all tags fields in a file.
 
 ### How to install:
 1. Download the `Display All Tags.applescript` file from this repository to your drive and open it in Script Editor
@@ -118,4 +118,4 @@ This script uses command line utilities `operon` or `kid3` (see above) to displa
 4. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 ### How it works in practice:
-Select the file you want to see, select the script from the drop-down menu.
+Select the file you want to inspect, select the script from the drop-down menu.
