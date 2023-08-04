@@ -68,7 +68,7 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 
 So: for genre tagging in Apple Music, the choice is to either tag one genre, or tag multiple genres with another separator. I might be able implement 'proper' null-separated genres in the future, but first I'd have to figure out a way in Applescript to detect if a frame is UTF-8 encoded id3v2.4.
 
-**Note 3**: Some people seem to think that the Year field in iTunes/Music should contain the re-release/reissue year of the album, not the song. But if you read the id3v2.4 specs for `TDRL` (Release Time, the field used for Year in the iTunes/Music application, and Year/Release Year/Release Date in most other players), it clearly states: `The 'Release time' frame contains a timestamp describing when the audio was first released.` (i.e., not when it was re-released on some compilation, _first_ released). This is exactly what the script does: it looks up the date when the single was first released.
+**Note 3**: Technically the `TDRC` ("Recording Time") field should contain the recording date/year of the music, not the (oldest) release date, but this is usually close enough.
 
 **Note 4**: This is not a fast script. Discogs only allows 60 requests per minute for their API, so the code intentionally has a 1 second delay per track built in. If you let this script loose on big selections, go grab a cup of coffee, walk your dog, look at cat pictures on the internet.
 
