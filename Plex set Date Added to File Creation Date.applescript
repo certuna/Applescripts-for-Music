@@ -70,7 +70,7 @@ repeat with fileItem in fileList
 	set _month to first item of birthTime
 	set _month to text -1 thru -2 of ("0" & _month)
 	set _year to (third item of birthTime) + 2000
-	if _year > 2030 then set _year to (_year - 100)
+	if _year > 2050 then set _year to (_year - 100)
 	set _time to (fourth item of birthTime)
 	set birthDate to {_day, _month, _year} as string
 	set birthTime to birthDate & " at " & _time as string
