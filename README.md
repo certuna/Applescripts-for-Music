@@ -141,7 +141,8 @@ It then cycles through all associated Albums, and set "Date Added" to the date o
 5. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
 
 ### How it works in practice:
-1. Run the script
-2. Confirm the Plex library location
-3. Choose if you want to process the whole library (may take very long!), or only a range of folders
-4. the script opens a Terminal windows so you can see what it does to the Plex database
+1. Make a backup of your Plex database
+2. Run the script
+3. Confirm the Plex library location
+4. Choose if you want to process the whole library (may take very long!), or only a range of folders
+5. the script opens a Terminal windows so you can see what it does to the Plex database
