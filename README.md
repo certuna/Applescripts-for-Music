@@ -119,3 +119,27 @@ Apple Music only supports a limited subset of tags. This script uses command lin
 
 ### How it works in practice:
 Select the file you want to inspect, select the script from the drop-down menu.
+
+## Script 5: Plex set Date Added to File Creation Date
+
+Many people want the "Date Added" in Plex for a song or album to be the time when they downloaded/ripped it, not when it was last modified, or when Plex read it first.
+
+This script modifies the Plex Media Server internal database to set the Date Added value for each mediafile (songs, but also movies, TV episodes, etc) to its File Creation Date (`btime` for those filesystem nerds).
+
+It first goes through all files in the selected folder range, reads their btime, and sets this in the Plex database.
+It then cycles through all associated Albums, and set "Date Added" to the date of the first Song
+
+(It actually does not involve Apple Music at all, but if you install it in your Apple Music scripts folder, you can launch the script from there)
+
+### How to install:
+1. Download the `Plex set Date Added to File Creation Date.applescript` file from this repository to your drive and open it in Script Editor
+2. Replace the `/username/` bit in the `defaultLibrary` variable with your own
+3. Save the script as `Plex set Date Added to File Creation Date.scpt`
+4. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
+5. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
+
+### How it works in practice:
+1. Run the script
+2. Confirm the Plex library location
+3. Choose if you want to process the whole library (may take very long!), or only a range of folders
+4. the script opens a Terminal windows so you can see what it does to the Plex database
