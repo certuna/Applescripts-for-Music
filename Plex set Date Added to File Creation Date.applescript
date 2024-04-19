@@ -105,6 +105,8 @@ tell application "Terminal"
 		--write btime to metadataItemID
 		set sqlCommand to "UPDATE metadata_items SET added_at = " & unixTime & " WHERE id = (" & sqlCommand & ");"
 		do script (sqlCommand) in currentTab
+		-- 0.1s delay because for some reason SQLite doesn't like getting these commands to quickly after each other
+		-- if you feel adventurous you can decrease this to speed up the script
 		delay 0.1
 	end repeat
 end tell
@@ -161,6 +163,8 @@ tell application "Terminal"
 			set sqlCommand to "UPDATE metadata_items SET added_at = " & trackAddedAt & " WHERE id = " & albumId & ";"
 			--display dialog sqlCommand
 			do script (sqlCommand) in currentTab
+			-- 0.05s delay because for some reason SQLite doesn't like getting these commands to quickly after each other
+			-- if you feel adventurous you can decrease this to speed up the script
 			delay 0.05
 			set albumCounter to albumCounter + 1
 		end if
