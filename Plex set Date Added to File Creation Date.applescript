@@ -173,14 +173,15 @@ tell application "Terminal"
 	do script (".exit") in currentTab
 end tell
 
-display dialog (itemCounter as string) & " files updated in " & (itemDuration as string) & " seconds (" & (itemSpeed as string) & " files per second)"
+set dialogText to (itemCounter as string) & " files updated in " & (itemDuration as string) & " seconds (" & (itemSpeed as string) & " files per second)"
 set albumDuration to (current date) - albumStartTime
 if albumDuration is not 0 then
 	set albumSpeed to (albumCounter / albumDuration)
 else
 	set albumSpeed to -1
 end if
-display dialog (albumCounter as string) & " albums updated in " & (albumDuration as string) & " seconds (" & (albumSpeed as string) & " files per second)"
+set dialogText to dialogText & linefeed & (albumCounter as string) & " albums updated in " & (albumDuration as string) & " seconds (" & (albumSpeed as string) & " files per second)"
+display dialog dialogText
 
 property pMaxInt : (2 ^ 29) - 1
 
