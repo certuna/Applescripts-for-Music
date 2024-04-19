@@ -128,7 +128,7 @@ Many people want the "Date Added" in Plex for a song or album to be the time whe
 
 This script modifies the Plex Media Server internal database to set the Date Added value for each mediafile (songs, but also movies, TV episodes, etc) to its File Creation Date (`btime` for those filesystem nerds).
 
-It first goes through all files in the selected folder range, reads their btime, and sets this in the Plex database.
+It first goes through all files in the selected folder range, reads their `btime`, and sets this in the Plex database.
 It then cycles through all associated Albums, and set "Date Added" to the date of the first Song
 
 (It actually does not involve Apple Music at all, but if you install it in your Apple Music scripts folder, you can launch the script from there)
