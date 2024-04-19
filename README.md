@@ -8,7 +8,7 @@
 
 [Script 4: Display All Tags](#script-4-display-all-tags)
 
-[Script 4: Plex set Date Added to File Creation Date](#script-5-plex-sete-date-added-to-file-creation-date)
+[Script 5: Plex set Date Added to File Creation Date](#script-5-plex-sete-date-added-to-file-creation-date)
 
 ## Script 1: Automatic tagging of Year and/or Genres from Discogs
 
