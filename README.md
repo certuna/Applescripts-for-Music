@@ -8,6 +8,8 @@
 
 [Script 4: Display All Tags](#script-4-display-all-tags)
 
+[Script 4: Plex set Date Added to File Creation Date](#script-5-plex-sete-date-added-to-file-creation-date)
+
 ## Script 1: Automatic tagging of Year and/or Genres from Discogs
 
 You are a happy macOS user, and you've successfully survived the transition from iTunes to the new Music app, introduced with macOS Catalina last year. You might like the interface, the scriptabilty, or you simply need Music to sync music to your iPhone or iPad, or stream to your AppleTV. If you have a sizeable music library, you will probably recognise these scenarios:
