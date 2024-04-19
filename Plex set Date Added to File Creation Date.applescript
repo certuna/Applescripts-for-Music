@@ -180,7 +180,7 @@ if albumDuration is not 0 then
 else
 	set albumSpeed to -1
 end if
-set dialogText to dialogText & linefeed & (albumCounter as string) & " albums updated in " & (albumDuration as string) & " seconds (" & (albumSpeed as string) & " files per second)"
+set dialogText to dialogText & linefeed & (albumCounter as string) & " albums updated in " & (albumDuration as string) & " seconds (" & (albumSpeed as string) & " albums per second)"
 display dialog dialogText
 
 property pMaxInt : (2 ^ 29) - 1
