@@ -11,9 +11,9 @@
 ## Script 1: Automatic tagging of Year and/or Genres from Discogs
 
 You are a happy macOS user, and you've successfully survived the transition from iTunes to the new Music app, introduced with macOS Catalina last year. You might like the interface, the scriptabilty, or you simply need Music to sync music to your iPhone or iPad, or stream to your AppleTV. If you have a sizeable music library, you will probably recognise these scenarios:
-- You have an awesome disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern songs by Jessie Ware and Dua Lipa.
-- You have ripped your cherished red and blue Beatles best-of CDs, released in 1993. To your frustration, Beatles songs keep appearing in your "90s Rock" playlists.
-- You have a big folder of loose tracks you downloaded on Napster back in the 1990s because you loved the videos on MTV! But they have no genre or year tags. So none of these songs ever get included in your Genre or Decade playlists, and this makes you sad.
+- You have an awesome disco compilation that was released in 2018, but contains tracks from 1975-1985. Tagging these tracks with 2018 makes little sense: your smart playlist of "70s Disco" will not pick these tracks up, and instead these tunes show up between modern songs by Doja Cat and Dua Lipa.
+- You have ripped your cherished red and blue Beatles best-of CDs, released in 1993. To your frustration, Beatles songs keep appearing in your "90s Rock" smart playlists.
+- You have a big folder of random tracks you downloaded on Napster back in the 1990s because you loved the videos on MTV! But they have no genre or year tags. So none of these songs ever get included in your Genre or Decade playlists, and this makes you sad.
 - You have a compilation album with collected hit singles, but they're pretty diverse: Pop, Punk Rock, Hip-Hop, House, Reggaeton. But unfortunately, all songs are tagged with the same genre(s).
 - You've started using a new music player that supports multiple genres, but all your tracks are tagged with one genre.
 - You might have tried auto-tagging genres with some tagger using last.fm or MusicBrainz but you've found out that the genres in those databases are all over the place.
@@ -68,13 +68,13 @@ Clearly, for search/filter/smart playlists to work as expected, these songs need
 
 So: for genre tagging in Apple Music, the choice is to either tag one genre, or tag multiple genres with another separator. I might be able implement 'proper' null-separated genres in the future, but first I'd have to figure out a way in Applescript to detect if a frame is UTF-8 encoded id3v2.4.
 
-**Note 3**: Technically the `TDRC` ("Recording Time") field should contain the recording date/year of the music, not the (oldest) release date, but this is usually close enough.
+**Note 3**: Technically the `TDRC` ("Recording Time") field should contain the recording date/year of the music, not when it was first released, but this is usually close enough. And certainly better than the (re-)issue date which could be decades later.
 
 **Note 4**: This is not a fast script. Discogs only allows 60 requests per minute for their API, so the code intentionally has a 1 second delay per track built in. If you let this script loose on big selections, go grab a cup of coffee, walk your dog, look at cat pictures on the internet.
 
 ## Script 2: Non-Apple Tags
 
-Apple Music only supports a limited subset of tags, many fields like _Language_, _Record Label_ or _Disc Subtitle_ can only be set using external tagging apps.
+Apple Music only supports a limited subset of tags, many fields like _Language_, _Record Label_, _Release Date_ or _Disc Subtitle_ can only be set using external tagging apps.
 
 This script allows you to set these "invisible" tags from within Apple Music, using the command line utilities of two "real" tagging apps in the background:
 
