@@ -135,7 +135,7 @@ It then cycles through all associated Albums, and set "Date Added" to the date o
 
 ### How to install:
 1. Download the `Plex set Date Added to File Creation Date.applescript` file from this repository to your drive and open it in Script Editor
-2. Replace the `/username/` bit in the `defaultLibrary` variable with your own
+2. First line of code: replace the `/username/` bit in the `defaultLibrary` variable with your own
 3. Save the script as `Plex set Date Added to File Creation Date.scpt`
 4. Put this file in `/Library/Music/Scripts` (all users) or `/Users/rickastley/Library/Music/Scripts` (one user). If the folder doesn't exist, create it. (note: for iTunes users, the folder is `/Library/iTunes/Scripts`)
 5. When you open Apple Music, there's now a scripts dropdown menu in the top menu bar between `Window` and `Help`
