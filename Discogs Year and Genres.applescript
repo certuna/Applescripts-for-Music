@@ -30,7 +30,7 @@ end replaceText
 
 to QueryDiscogs(ArtistSong, nthItem)
 
-	set Token to "please_insert_your_own_API_key_here"
+	set Token to "jrfzqtvVfuQOfNYGRsaRxHxdaRtCgxeTZduAzVQv"
 	--	you can find your API key at https://www.discogs.com/settings/developers
 	set baseURL to "\"https://api.discogs.com/database/search?"
 	set AdditionalFilters to "&type=master&format_exact=Single\""
